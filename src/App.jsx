@@ -1,6 +1,7 @@
 
 import './App.css'
 import ToDo from './todo'
+import Food from './food'
 
 function App() {
   const time = 50;
@@ -13,6 +14,9 @@ function App() {
       <ToDo task="Assignment" isDone={false} time={time}></ToDo>
       <ToDo task="Revise JS" isDone={true} time={time}></ToDo>
 
+      <Food task='Biriyani' isDone={true}></Food>
+      <Food task='Pasta' isDone={false}></Food>
+      <Food task='Pizza' isDone={true}></Food>
       {/* <Person></Person>
       <Quality></Quality>
       <Student></Student>
