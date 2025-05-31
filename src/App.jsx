@@ -1,22 +1,40 @@
 
 import './App.css'
-import ToDo from './todo'
-import Food from './food'
+import ToDo from './todo';
+import Food from './food';
+import Actor from './Actor';
+import Singer from './Singer';
 
 function App() {
   const time = 50;
+  const actors = ['Bappa Raj', 'Omar Sunny', 'Salman Shah', 'Dipjol', 'Anwar', 'Manna', 'Rajjak'];
+
+  const singers = [
+    { id: 1, name: 'Dr. Mahfuz', age: 65 },
+    { id: 2, name: 'Tahsan', age: 45 },
+    { id: 3, name: 'Shuvro Deb', age: 56 }
+  ]
 
   return (
     <>
       <h1>React Core Concepts</h1>
 
-      <ToDo task="Learn React" isDone={true} time={time}></ToDo>
+      {
+        singers.map(singer => <Singer singer={singer}></Singer>)
+      }
+
+      {
+        actors.map(actor => <Actor actor={actor}></Actor>)
+      }
+
+      {/* <ToDo task="Learn React" isDone={true} time={time}></ToDo>
       <ToDo task="Assignment" isDone={false} time={time}></ToDo>
       <ToDo task="Revise JS" isDone={true} time={time}></ToDo>
 
       <Food task='Biriyani' isDone={true}></Food>
       <Food task='Pasta' isDone={false}></Food>
-      <Food task='Pizza' isDone={true}></Food>
+      <Food task='Pizza' isDone={true}></Food> */}
+
       {/* <Person></Person>
       <Quality></Quality>
       <Student></Student>
@@ -34,7 +52,7 @@ function App() {
 }
 
 // const {name, runs} = {name: 'Tamim', runs: '5000'}
-function Player({name, runs}) {
+function Player({ name, runs }) {
   return (
     <div className='student'>
       <h3>Name: {name}</h3>
@@ -43,7 +61,7 @@ function Player({name, runs}) {
   )
 }
 
-function Salami({event, amount=0}) {
+function Salami({ event, amount = 0 }) {
   return (
     <div className='student'>
       <p>Salami For: {event}</p>
@@ -79,12 +97,12 @@ function Person() {
 function Quality() {
   const lang1 = "Python";
   const lang2 = "JavaScript";
-  return(
+  return (
     <div>
       <h2>The qualities I have:</h2>
       <p>I know {lang1}. I have also learned {lang2}.</p>
     </div>
-  ) 
+  )
 }
 
 function Student() {
@@ -93,7 +111,7 @@ function Student() {
       <p>Name: </p>
       <p>Dept.: </p>
     </div>
-  )  
+  )
 }
 
 export default App
