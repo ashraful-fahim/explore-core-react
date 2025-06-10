@@ -4,6 +4,8 @@ import ToDo from './todo';
 import Food from './food';
 import Actor from './Actor';
 import Singer from './Singer';
+import Library from './Library'
+
 
 function App() {
   const time = 50;
@@ -13,19 +15,28 @@ function App() {
     { id: 1, name: 'Dr. Mahfuz', age: 65 },
     { id: 2, name: 'Tahsan', age: 45 },
     { id: 3, name: 'Shuvro Deb', age: 56 }
-  ]
+  ];
+
+  const books = [
+    { id: 1, name: 'Physics', price: 250},
+    { id: 2, name: 'Chemistry', price: 350},
+    { id: 3, name: 'Biology', price: 330},
+    { id: 4, name: 'ICT', price: 150}
+  ];
 
   return (
     <>
       <h1>React Core Concepts</h1>
 
-      {
-        singers.map(singer => <Singer singer={singer}></Singer>)
-      }
+      <Library books={books}></Library>
 
       {
-        actors.map(actor => <Actor actor={actor}></Actor>)
+        singers.map(singer => <Singer key={singer.id} singer={singer}></Singer>)
       }
+
+      {/* {
+        actors.map(actor => <Actor actor={actor}></Actor>)
+      } */}
 
       {/* <ToDo task="Learn React" isDone={true} time={time}></ToDo>
       <ToDo task="Assignment" isDone={false} time={time}></ToDo>

@@ -1,8 +1,9 @@
+import './App.css'
 export default function Singer ({singer}) {
     return (
-        <div>
+        <div className='singer'>
             <h3>Name: {singer.name}</h3>
-            <p>age: {singer.age}</p>
+            <p>Age: {singer.age}</p>
         </div>
     )
 }
